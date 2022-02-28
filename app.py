@@ -1,7 +1,19 @@
 
-from pywebio import start_server
+# from pywebio import start_server
+# from pywebio.input import *
+# from pywebio.output import *
+
+
+from pywebio.platform.flask import webio_view
+from pywebio import STATIC_PATH
+from flask import Flask, send_from_directory
 from pywebio.input import *
 from pywebio.output import *
+import argparse
+from pywebio import start_server
+import pandas as pd
+import pickle
+import numpy as np
 
 
 symptoms = ['None','abdominal_pain',
@@ -341,8 +353,13 @@ def main():
         for i,pr in enumerate(precation_list):
             put_html(f"<p style='left-padding:15px'>{i+1} . <big style='color:grey'>{pr}</big></p>")
         put_html("<center><a href='/' style='background-color: #F34423DD;color: white;padding: 1em 1.5em;text-decoration: none;text-transform: uppercase;'><big>Home<big></a></center>")
-if __name__ == "__main__":
-    start_server(main, port=8080, debug=True)
+# if __name__ == "__main__":
+#     start_server(main, port=8080, debug=True)
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--port", type=int, default=8080)
+    args = parser.parse_args()
 
+    start_server(predict, port=args.port)
 
 #   background-color: red;color: white;padding: 1em 1.5em;text-decoration: none;text-transform: uppercase;
