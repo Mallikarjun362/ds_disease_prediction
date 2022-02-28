@@ -51,4 +51,8 @@ tqdm==4.59.0
 urllib3==1.26.4
 Werkzeug==1.0.1
 wincertstore==0.2
+<<<<<<< HEAD
 wrapt==1.12.1
+=======
+wrapt==1.12.1
+>>>>>>> db4ebb3cf6cf1ec84d476b2d689c1ae271721c46

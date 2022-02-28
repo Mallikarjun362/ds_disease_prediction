@@ -1,8 +1,7 @@
 
-from pywebio import start_server
-from pywebio.input import *
-from pywebio.output import *
-
+# from pywebio import start_server
+# from pywebio.input import *
+# from pywebio.output import *
 
 
 from pywebio.platform.flask import webio_view
@@ -357,11 +356,12 @@ def main():
 # if __name__ == "__main__":
 #     start_server(main, port=8080, debug=True)
 
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--port", type=int, default=8080)
     args = parser.parse_args()
-
     start_server(main, port=args.port)
 
 #   background-color: red;color: white;padding: 1em 1.5em;text-decoration: none;text-transform: uppercase;
